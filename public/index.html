@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebRTC 视频通话</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>📹 WebRTC 视频通话</h1>
+    </header>
+
+    <div id="main-container">
+      <div id="setup-panel" class="panel">
+        <h2>创建或加入房间</h2>
+        <button id="create-room-btn" class="btn btn-primary">创建房间</button>
+        
+        <div class="input-group">
+          <input type="text" id="room-id-input" placeholder="输入房间ID">
+          <button id="join-room-btn" class="btn btn-secondary">加入房间</button>
+        </div>
+        
+        <div id="room-info" class="hidden">
+          <p>您的房间ID: <span id="room-id"></span></p>
+          <button id="copy-room-btn" class="btn btn-small">复制房间ID</button>
+        </div>
+      </div>
+
+      <div id="call-panel" class="panel hidden">
+        <div id="video-container">
+          <div class="video-wrapper">
+            <video id="local-video" autoplay muted playsinline></video>
+            <div class="video-label">本地视频</div>
+          </div>
+          <div class="video-wrapper">
+            <video id="remote-video" autoplay playsinline></video>
+            <div class="video-label">远端视频</div>
+          </div>
+        </div>
+        
+        <div id="controls">
+          <button id="toggle-video" class="btn btn-danger">
+            <span class="icon">📹</span> 关闭摄像头
+          </button>
+          <button id="toggle-audio" class="btn btn-danger">
+            <span class="icon">🎙️</span> 静音
+          </button>
+          <button id="end-call" class="btn btn-warning">
+            <span class="icon">📞</span> 结束通话
+          </button>
+        </div>
+        
+        <div id="status">
+          <div id="call-room-info" class="hidden">
+            <span>房间ID: </span><span id="call-room-id"></span>
+            <button id="copy-call-room-btn" class="btn btn-small">复制房间ID</button>
+          </div>
+          <span id="connection-status">连接状态: 等待中...</span>
+        </div>
+      </div>
+
+      <div id="error-message" class="error hidden"></div>
+    </div>
+
+    <footer>
+      <p>支持多人视频通话，最多4人同时在线</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

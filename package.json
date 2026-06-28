@@ -1,0 +1,17 @@
+{
+  "name": "webrtc-video-call",
+  "version": "1.0.0",
+  "description": "Browser video call using WebRTC and WebSocket",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "ws": "^8.14.2"
+  },
+  "keywords": ["webrtc", "video-call", "websocket"],
+  "author": "",
+  "license": "MIT"
+}
